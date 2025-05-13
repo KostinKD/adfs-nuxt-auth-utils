@@ -1,10 +1,10 @@
 {
-  "name": "nuxt-auth-utils",
-  "version": "0.5.20",
-  "description": "Add Authentication to Nuxt applications with secured & sealed cookies sessions.",
+  "name": "adfs-nuxt-auth-utils",
+  "version": "1.0.0",
+  "description": "Add Authentication to Nuxt applications with secured & sealed cookies sessions. FORKED",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/atinux/nuxt-auth-utils.git"
+    "url": "git+https://github.com/KostinKD/adfs-nuxt-auth-utils.git"
   },
   "license": "MIT",
   "type": "module",
@@ -26,7 +26,7 @@
     "dev": "nuxi dev playground",
     "dev:build": "nuxi build playground",
     "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxi prepare playground",
-    "release": "npm run lint && npm run test && npm run prepack && changelogen --release && npm publish && git push --follow-tags",
+    "release": "npm run lint && npm run prepack && npm publish",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "test": "vitest run",
