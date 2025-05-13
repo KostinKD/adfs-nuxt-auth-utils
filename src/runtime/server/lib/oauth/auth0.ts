@@ -75,7 +75,7 @@ export function defineOAuthAuth0EventHandler({ config, onSuccess, onError }: OAu
       return handleMissingConfiguration(event, 'auth0', ['clientId', 'clientSecret', 'domain'], onError)
     }
     const authorizationURL = `https://${config.domain}/authorize`
-    const tokenURL = `https://${config.domain}/oauth/token`
+    const tokenURL = `https://${config.domain}/oauth2/token`
 
     const query = getQuery<{ code?: string }>(event)
     const redirectURL = config.redirectURL || getOAuthRedirectURL(event)
@@ -123,7 +123,7 @@ export function defineOAuthAuth0EventHandler({ config, onSuccess, onError }: OAu
 
     // TODO: improve typing
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const user: any = await $fetch(`https://${config.domain}/userinfo`, {
+    const user: any = await $fetch(`https://${config.domain}/oauth2/userinfo`, {
       headers: {
         Authorization: `${tokenType} ${accessToken}`,
       },
